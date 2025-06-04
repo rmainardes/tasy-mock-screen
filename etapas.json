@@ -1,0 +1,170 @@
+[
+    {
+        "_comment": "Referente ao primeiro A- Clinical pathway",
+        "descricao": "teste",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente ao segundo A- Clinical pathway",
+        "descricao": "summary",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente ao segundo A- Clinical pathway",
+        "descricao": "outcome",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Chiquim - Teste",
+        "descricao": "Summary",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Chiquim - Teste",
+        "descricao": "Stage 1",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Chiquim - Teste",
+        "descricao": "Stage 2",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Chiquim - Teste2",
+        "descricao": "summary",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Chiquim - Teste2",
+        "descricao": "stage 1",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Chiquim - Teste2",
+        "descricao": "stage 2",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Maicon",
+        "descricao": "Summary",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Maicon",
+        "descricao": "Stage 1",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Maicon",
+        "descricao": "Stage 2",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Maicon - New Version 2",
+        "descricao": "2 Stage 1",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Maicon - New Version 2",
+        "descricao": "1 Summary",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Clinical pathway - Maicon - New Version 2",
+        "descricao": "3 Stage 2",
+        "dias": 9999,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Nota clinica e Sinal vital",
+        "descricao": "",
+        "dias": "",
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A - Oncology - Clinical Pathway",
+        "descricao": "Stage 1 - 1st consultation + Assessment",
+        "dias": 1,
+        "nomePaciente": "1st consultation + Assessment"
+    },
+    {
+        "_comment": "Referente a A - testing not common permission",
+        "descricao": "",
+        "dias": "",
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A protocol",
+        "descricao": "sumario",
+        "dias": 2,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A protocol",
+        "descricao": "preparação cirurgica",
+        "dias": 9,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A protocol",
+        "descricao": "cirurgia",
+        "dias": 9,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A protocol",
+        "descricao": "pós cirurgico",
+        "dias": 9,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A Protocollllll",
+        "descricao": "cirurgia",
+        "dias": 1,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A Protocollllll",
+        "descricao": "pos cirurg",
+        "dias": 2,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A Protocollllll",
+        "descricao": "acompanhamento",
+        "dias": 3,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a A Teste 33",
+        "descricao": "cirurgi",
+        "dias": 1,
+        "nomePaciente": ""
+    },
+        {
+        "_comment": "Referente a A Teste 33",
+        "descricao": "cirur pos",
+        "dias": 2,
+        "nomePaciente": ""
+    },
+    {
+        "_comment": "Referente a Aa",
+        "descricao": "summary",
+        "dias": 9999,
+        "nomePaciente": ""
+    }
+]

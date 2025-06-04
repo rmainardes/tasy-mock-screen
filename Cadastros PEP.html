@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" ng-strict-di class="ng-scope">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="wheader.css">
+    <link rel="stylesheet" href="wfooter.scss">
+    <link rel="stylesheet" href="framework.css">
+    <style>
+        /* Se você quiser manter algum destaque visual, pode adaptar estes estilos. */
+        /* Agora não há <li>, então estes não terão efeito, mas você pode ajustar se quiser: */
+        #divLeft div,
+        #divRight div {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        #divLeft div:hover {
+            background-color: #f0f0f0;
+        }
+
+        #divRight div:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body style="margin: 0px" id="bodyComFonte">
+
+    <header class="w-header w-header--bright">
+        <div style="height: 100%; padding-top: 10px;">
+            <button type="button" id="buttonTop" class="w-spotlight-hamburguer ng-scope"
+                style="margin: 3px; display: block;" ng-if="!(headerBlocked || externalMonitor || nicuAnalytics)"
+                ng-disabled="(headerBlocked || nicuAnalytics)" ng-show="hasOpenFeatures()"
+                ng-click="::onSpotlightButtonClick()">
+                <i> </i>
+            </button>
+            <button type="button" class="w-spotlight-hamburguer ng-scope" style="margin: 3px; display: block;"
+                ng-if="!(headerBlocked || externalMonitor || nicuAnalytics)"
+                ng-disabled="(headerBlocked || nicuAnalytics)" ng-show="hasOpenFeatures()"
+                ng-click="::onSpotlightButtonClick()">
+                <i> </i>
+            </button><button type="button" class="w-spotlight-hamburguer ng-scope" style="margin: 3px; display: block;"
+                ng-if="!(headerBlocked || externalMonitor || nicuAnalytics)"
+                ng-disabled="(headerBlocked || nicuAnalytics)" ng-show="hasOpenFeatures()"
+                ng-click="::onSpotlightButtonClick()">
+                <i> </i>
+            </button>
+        </div>
+
+        <img class="w-header__logo" alt="Tasy" src="/assets/components/header/logo-tasy-emr.svg">
+        <div class="w-header__tabs" id="header">
+            <!-- ngRepeat: feature in openFeatures | limitTo: getMaxOpenFeatures() -->
+            <div class="w-header-tab no-shrink ng-scope is-active"
+                ng-repeat="feature in openFeatures | limitTo: getMaxOpenFeatures()" ng-class="{ 'w-header-tab--external': feature.params.isExternalAccess,
+                     'w-header-tab--child': feature.params.parentCode,
+                     'is-active' : isFeatureActive(feature),
+                     'is-disabled' : isTabDisabled(feature), }" ng-show="isTabVisible(feature)"
+                ng-click="::onTabClick(feature)"
+                ng-mouseover="::showTooltipIfHasElipsis($event, feature.config.caption)">
+                <div class="w-header-tab__content">
+                    <span class="w-header-tab__label ng-binding" id="feature-99023"
+                        ng-mouseover="::showTooltipIfHasElipsis($event, feature.config.caption)">
+                        Cadastros PEP
+                    </span>
+                    <button id="unstyledButton"></button>
+                </div>
+            </div><!-- end ngRepeat: feature in openFeatures | limitTo: getMaxOpenFeatures() -->
+
+            <div class="w-header-tab__overflow dropdown ng-hide" ng-show="isTabOverflowVisible()" uib-dropdown="">
+            </div>
+
+            <div class="w-header-menu ng-scope">
+                <w-person-image class="w-header-avatar ng-isolate-scope" style="margin-right: 8px"
+                    no-photo="/assets/components/header/nophoto.svg" image="userImage">
+                    <img class="gwt-Image" ng-src="/assets/components/header/nophoto.svg"
+                        src="/assets/components/header/nophoto.svg">
+                </w-person-image>
+                <span class="w-header-avatar truncate ng-binding">
+                    Rodrigo Mainardes Ribeiro
+                </span>
+                <button id="unstyledButton2"></button>
+            </div>
+
+            <div class="w-header-menu ng-scope" style="margin-left: 20px;">
+                <w-person-image class="w-header-avatar ng-isolate-scope" style="margin-right: 8px"
+                    no-photo="/assets/components/header/info.svg" image="userImage">
+                    <img src="/assets/components/header/info.svg">
+                </w-person-image>
+                <button id="unstyledButton3"></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="ng-scope" style="height: 100%;">
+        <div class="wschematic ng-isolate-scope"
+            style="background-color: #BFBFBF; height: 90%; display: flex; align-content: center;" tabindex="-1"
+            w-onload="loaded($handler)" force-modal="externalforce()" height="externalheight()" width="externalwidth()">
+
+            <div class="wschematic-nav-bar" style="">
+                <div class="w-listbox w-listbox-dropdown" id="botaoLinhaDeCuidado" style="align-self: center;">
+                    <span>Linha de cuidado</span>
+                </div>
+            </div>
+
+            <div tasy-master-slave-manager="" class="wschematic-content ng-scope has-child" w-onload="load($handler)"
+                data-developer-bar="before">
+                <!-- LEFT SIDE: será preenchido com linhacuidado.json -->
+                <div w-code="1127821" w-title="Linha de cuidado" w-width="50" class="pn pn-shadow pn-6" id="divLeft"
+                    enable-resizer-horizontal="horizontal">
+                    <b-developer-bar name="w-panel" code="1127821" edit-component="b-regions" class="ng-isolate-scope">
+                        <div class="wdbpanel">
+                            <div class="griddetailcontainer"></div>
+                        </div>
+                    </b-developer-bar>
+                    <!-- O script irá injetar vários <div><span>…</span></div> aqui -->
+                </div>
+
+                <!-- RIGHT SIDE: mostrará as etapas filtradas a partir de etapas.json -->
+                <div w-code="1127821" w-title="Linha de cuidado" w-width="50" class="pn pn-shadow pn-6" id="divRight"
+                    enable-resizer-horizontal="horizontal">
+                    <b-developer-bar name="w-panel" code="1127821" edit-component="b-regions" class="ng-isolate-scope">
+                        <!-- Inicialmente vazio: o script irá injetar vários <div><span>…</span></div> aqui -->
+                    </b-developer-bar>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-footer2">
+            <!-- Footer content (if any) -->
+        </div>
+
+        <!-- Seu script antigo (pode permanecer, mas não interfere no novo) -->
+
+
+        <!-- NOVO SCRIPT: sem <ul>/<li>, usando <div><span> para cada item -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const divLeft = document.getElementById('divLeft');
+                const divRight = document.getElementById('divRight');
+
+                let linhasData = [];   // Conteúdo de linhacuidado.json
+                let etapasData = [];   // Conteúdo de etapas.json
+
+                // 1) Carrega linhacuidado.json
+                fetch('linhacuidado.json')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Could not load linhacuidado.json');
+                        return response.json();
+                    })
+                    .then(data => {
+                        linhasData = data;
+                        renderLinhasList();
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        divLeft.innerHTML = '<p style="color: red;">Falha ao carregar linhacuidado.json</p>';
+                    });
+
+                // 2) Carrega etapas.json
+                fetch('etapas.json')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Could not load etapas.json');
+                        return response.json();
+                    })
+                    .then(data => {
+                        etapasData = data;
+                    })
+                    .catch(err => {
+                        console.error(err);
+                    });
+
+                // 3) Renderiza “linhas” dentro de divLeft, cada uma como <div><span>…</span></div>
+                function renderLinhasList() {
+                    divLeft.innerHTML = ''; // Limpa qualquer conteúdo anterior
+
+                    linhasData.forEach(linhaObj => {
+                        const itemDiv = document.createElement('div');
+                        const span = document.createElement('span');
+                        span.textContent = linhaObj.descricao || '(sem descrição)';
+
+                        // Armazena a descrição para filtro
+                        itemDiv.dataset.descricao = linhaObj.descricao;
+                        // Ao clicar, exibe as etapas correspondentes
+                        itemDiv.addEventListener('click', function () {
+                            const selectedDescricao = this.dataset.descricao;
+                            renderEtapasForLinha(selectedDescricao);
+                        });
+
+                        itemDiv.appendChild(span);
+                        divLeft.appendChild(itemDiv);
+                    });
+                }
+
+                // 4) Renderiza as etapas filtradas dentro de divRight, cada uma como <div><span>…</span></div>
+                function renderEtapasForLinha(linhaDescricao) {
+                    divRight.innerHTML = ''; // Limpa conteúdo anterior
+
+                    // Filtra onde _comment inclua exatamente a linhaDescricao
+                    const matchingEtapas = etapasData.filter(etapaObj => {
+                        if (!etapaObj._comment) return false;
+                        return etapaObj._comment.includes(linhaDescricao);
+                    });
+
+                    if (matchingEtapas.length === 0) {
+                        divRight.innerHTML = '<p>Nenhuma etapa encontrada para: <strong>'
+                            + linhaDescricao + '</strong></p>';
+                        return;
+                    }
+
+                    matchingEtapas.forEach(etapaObj => {
+                        const itemDiv = document.createElement('div');
+                        const span = document.createElement('span');
+
+                        const descText = etapaObj.descricao || '(sem descrição)';
+                        const diasText = (etapaObj.dias !== undefined && etapaObj.dias !== '')
+                            ? ' (dias: ' + etapaObj.dias + ')'
+                            : '';
+                        span.textContent = descText + diasText;
+
+                        itemDiv.appendChild(span);
+                        divRight.appendChild(itemDiv);
+                    });
+                }
+            });
+        </script>
+    </div>
+</body>
+
+</html>
